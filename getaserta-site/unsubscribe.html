@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsubscribe | Aserta</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        :root {
+            --primary: #1F4F82;
+            --text-dark: #111827;
+            --text-light: #6d7175;
+            --bg-brand-light: #E0EDEE;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        nav {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--bg-brand-light);
+        }
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img { height: 50px; width: auto; }
+        .back-link {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        .back-link:hover { color: var(--primary); }
+        main {
+            flex: 1;
+            max-width: 560px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        h1 { font-size: 1.75rem; margin-bottom: 12px; }
+        p { color: var(--text-light); margin-bottom: 16px; }
+        .error { color: #b91c1c; }
+        a { color: var(--primary); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo"><img src="/assets/asertalogo.png" alt="Aserta"></a>
+            <a href="/" class="back-link">← Back to getaserta.com</a>
+        </div>
+    </nav>
+    <main>
+        <h1>Unsubscribe</h1>
+        <p id="status">Taking you to our unsubscribe page…</p>
+        <p id="fallback" hidden>
+            If you are not redirected automatically,
+            <a id="manual-link" href="#">click here</a>.
+        </p>
+        <p id="error" class="error" hidden>
+            We could not process this link. Please contact
+            <a href="mailto:aserta-app@aserta.store">aserta-app@aserta.store</a>
+            and ask to be removed from our mailing list.
+        </p>
+    </main>
+    <script>
+        (function () {
+            var SCRIPT_BASE = "https://script.google.com/macros/s/AKfycbznejE0j6Q5WtuFP6lXDYP-6eaTUHi_ZCtx7siyoX5XmFZ0gblcxgnYWTEbEObQZ_Us/exec";
+            var params = new URLSearchParams(window.location.search);
+            var email = (params.get("email") || "").trim();
+
+            if (!email || email.indexOf("@") === -1) {
+                document.getElementById("status").hidden = true;
+                document.getElementById("error").hidden = false;
+                return;
+            }
+
+            var target = SCRIPT_BASE + "?email=" + encodeURIComponent(email);
+            var manual = document.getElementById("manual-link");
+            manual.href = target;
+
+            window.setTimeout(function () {
+                document.getElementById("fallback").hidden = false;
+            }, 2500);
+
+            window.location.replace(target);
+        })();
+    </script>
+</body>
+</html>

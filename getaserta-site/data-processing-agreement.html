@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Processing Agreement | Aserta</title>
+    <style>
+        :root {
+            --primary: #1F4F82;
+            --text-dark: #111827;
+            --text-light: #6d7175;
+            --bg-brand-light: #E0EDEE;
+        }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+        }
+        body { 
+            color: var(--text-dark); 
+            line-height: 1.6; 
+            background-color: white; 
+        }
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+        }
+        nav { 
+            padding: 15px 0; 
+            border-bottom: 1px solid var(--bg-brand-light); 
+        }
+        .nav-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .logo img { 
+            height: 50px; 
+            width: auto; 
+        }
+        .back-link {
+            text-decoration: none; 
+            color: var(--text-light); 
+            font-weight: 600;
+        }
+        .back-link:hover {
+            color: var(--primary);
+        }
+        h1 { 
+            font-size: 2.5rem; 
+            margin-bottom: 10px; 
+            color: var(--text-dark);
+        }
+        h2 { 
+            font-size: 1.5rem; 
+            margin-top: 40px; 
+            margin-bottom: 15px; 
+            color: var(--text-dark); 
+            border-bottom: 2px solid var(--bg-brand-light);
+            padding-bottom: 10px;
+        }
+        h3 {
+            font-size: 1.1rem;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+        p, ul, li { 
+            font-size: 0.95rem; 
+            color: var(--text-light); 
+            margin-bottom: 12px; 
+        }
+        ul { 
+            margin-left: 20px; 
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .last-updated { 
+            font-size: 0.875rem; 
+            color: var(--text-light); 
+            margin-bottom: 40px; 
+            display: block; 
+        }
+        .info-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .section-number {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table th, table td {
+            border: 1px solid var(--bg-brand-light);
+            padding: 12px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f9fafb;
+            font-weight: 600;
+        }
+        footer { 
+            background: var(--primary); 
+            color: white; 
+            text-align: center; 
+            padding: 40px 0; 
+            margin-top: 60px; 
+        }
+        footer p {
+            color: white;
+            margin: 0;
+        }
+        a {
+            color: var(--primary);
+        }
+        .signature-block {
+            margin-top: 60px;
+            border-top: 2px solid var(--bg-brand-light);
+            padding-top: 30px;
+        }
+        .signature-line {
+            display: inline-block;
+            width: 250px;
+            border-bottom: 1px solid var(--text-dark);
+            margin-top: 40px;
+            margin-right: 50px;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.2rem; }
+            .container { padding: 20px 15px; }
+            table { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="/assets/asertalogo.png" alt="Aserta">
+            </a>
+            <a href="/" class="back-link">&larr; Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Data Processing Agreement (DPA)</h1>
+        <span class="last-updated">Effective date: 16 June 2026 &middot; Version: 1.1 &middot; Previous version: 1.0 (5 March 2026)</span>
+
+        <div class="info-box">
+            <strong>About this agreement</strong>
+            <p style="margin-top: 10px;">This Data Processing Agreement (&ldquo;DPA&rdquo;) forms part of the contract between <strong>Aserta Ltd</strong> (&ldquo;Aserta&rdquo;, &ldquo;Processor&rdquo;) and the Shopify merchant who installs the Aserta app (&ldquo;Merchant&rdquo;, &ldquo;Controller&rdquo;).</p>
+            <p>It governs processing where <strong>you are the controller</strong> and <strong>Aserta is your processor</strong> — principally <strong>product catalogue text</strong> accessed via the Shopify API for compliance audits.</p>
+            <p><strong>Separate from this DPA:</strong> Aserta also processes <strong>merchant account data</strong> (shop domain, OAuth token, subscription state, etc.) as an <strong>independent controller</strong>. That processing is described in our <a href="https://getaserta.com/privacy.html">Privacy Policy</a>, not this DPA.</p>
+            <p>Related documents: <a href="https://getaserta.com/privacy.html">Privacy Policy</a> &middot; <a href="https://getaserta.com/subprocessors.html">Subprocessors</a> &middot; <a href="https://getaserta.com/terms.html">Terms of Service</a></p>
+        </div>
+
+        <h2>1. Definitions</h2>
+        <p><strong>Controller:</strong> The Merchant who installs and uses the Aserta app and determines the purposes and means of processing personal data relating to their business and product catalogue.</p>
+        <p><strong>Processor:</strong> Aserta Ltd, which processes personal data on the Controller&rsquo;s documented instructions solely to provide the compliance audit service described in this DPA.</p>
+        <p><strong>Personal Data (under this DPA):</strong> Any personal data contained in product catalogue content that Aserta accesses, analyses, or modifies through the Shopify API in providing the Service — for example, a testimonial quote with a customer name in a product description. Product ingredients and titles are usually <strong>not</strong> personal data.</p>
+        <p><strong>Processing:</strong> Any operation performed on personal data, including access, analysis, modification, transmission, storage, or deletion.</p>
+        <p><strong>Data Subject:</strong> An identifiable natural person whose personal data appears in product content processed under this DPA. Aserta does <strong>not</strong> routinely process the Controller&rsquo;s buyers&rsquo; order, account, or payment data.</p>
+        <p><strong>Sub-processor:</strong> A third party engaged by Aserta to process personal data on the Controller&rsquo;s behalf under this DPA (listed at <a href="https://getaserta.com/subprocessors.html">getaserta.com/subprocessors</a>).</p>
+        <p><strong>Service:</strong> The Aserta Shopify application and related compliance audit features subscribed to by the Controller.</p>
+
+        <h2>2. Scope and purpose</h2>
+        <h3>2.1 In scope (processor processing)</h3>
+        <p>This DPA applies to personal data Aserta processes on your instructions when providing the Service, including personal data contained in:</p>
+        <ul>
+            <li>Product <strong>titles</strong>, <strong>description HTML</strong>, and <strong>tags</strong> accessed via the Shopify Admin API;</li>
+            <li>Product <strong>type</strong> where used for compliance heuristics;</li>
+            <li><strong>Metafields</strong> Aserta reads or writes for audit status (e.g. <code>aserta_app.compliance_audit</code>);</li>
+            <li>Any other product catalogue fields you instruct Aserta to audit or update through the app.</li>
+        </ul>
+
+        <h3>2.2 Out of scope (Aserta as controller)</h3>
+        <p>The following is <strong>not</strong> covered by this DPA because Aserta acts as an <strong>independent controller</strong> (see Privacy Policy):</p>
+        <ul>
+            <li>Your shop domain, display name, OAuth credentials, and subscription/trial state on Aserta&rsquo;s systems;</li>
+            <li>Records of which product IDs you monitor and audit timestamps;</li>
+            <li>Support correspondence you send to Aserta;</li>
+            <li>Shopify app billing handled by Shopify (Aserta does not receive payment card data).</li>
+        </ul>
+
+        <h3>2.3 Purpose of processing</h3>
+        <p>Aserta processes personal data solely for the following purposes:</p>
+        <ul>
+            <li>Performing automated compliance audits and ingredient identification</li>
+            <li>Applying text formatting to product descriptions</li>
+            <li>Generating compliance reports and audit trails</li>
+            <li>Maintaining the security and integrity of the Service</li>
+            <li>Complying with legal obligations</li>
+        </ul>
+
+        <h3>2.4 Prohibited uses</h3>
+        <p>Aserta will NOT:</p>
+        <ul>
+            <li>Process personal data for marketing, advertising, or profiling purposes</li>
+            <li>Share personal data with third parties for their own purposes</li>
+            <li>Use personal data to build consumer databases or customer lists</li>
+            <li>Combine personal data from multiple Stores for analytics or insights</li>
+            <li>Process personal data for any purpose beyond those outlined in Section 2.3</li>
+        </ul>
+
+        <h2>3. Nature of processing</h2>
+        <p>Aserta primarily <strong>accesses product data via the Shopify API, analyses it, and writes results back</strong> to your Shopify store (including metafields and, where you apply updates, description formatting). Full product descriptions are <strong>not</strong> routinely archived in Aserta&rsquo;s database; persistent records on Aserta systems relating to the Service are limited mainly to shop connection metadata and monitored product identifiers (see Privacy Policy).</p>
+        <table>
+            <tr>
+                <th>Activity</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Access &amp; analysis</td>
+                <td>Read product catalogue fields via Shopify API; run rule-based compliance checks</td>
+            </tr>
+            <tr>
+                <td>Modification</td>
+                <td>Write audit metafields and, when you use Apply Compliance Updates, apply formatting or warning blocks you request</td>
+            </tr>
+            <tr>
+                <td>Transient processing</td>
+                <td>Product text processed in memory during audits and webhook handling</td>
+            </tr>
+            <tr>
+                <td>Deletion</td>
+                <td>Cease processing on uninstall; delete Aserta-held connection records promptly; Shopify GDPR webhooks implemented (see Section 6)</td>
+            </tr>
+        </table>
+
+        <h2>4. Controller Instructions</h2>
+        <h3>4.1 Lawful basis</h3>
+        <p>The Controller is responsible for ensuring it has a lawful basis to process personal data in its product catalogue and to instruct Aserta to process that data. Aserta processes personal data under this DPA only:</p>
+        <ul>
+            <li>To perform the Service under the Terms of Service; and</li>
+            <li>In accordance with this DPA and the Controller&rsquo;s use of the app (including audit and apply actions).</li>
+        </ul>
+
+        <h3>4.2 Limitations on Processing</h3>
+        <p>Aserta will only process personal data in accordance with:</p>
+        <ul>
+            <li>The Controller's explicit written instructions</li>
+            <li>The terms of this DPA and the Privacy Policy</li>
+            <li>Applicable data protection laws</li>
+        </ul>
+        <p>Any processing beyond these scopes is prohibited. If Aserta receives conflicting instructions, Aserta may decline to process until clarification is received.</p>
+
+        <h2>5. Data Processor Responsibilities</h2>
+        <h3>5.1 Security measures</h3>
+        <p>Aserta implements appropriate technical and organisational measures, including:</p>
+        <ul>
+            <li><strong>Encryption in transit:</strong> TLS for data between Shopify, merchants, and Aserta servers;</li>
+            <li><strong>Access controls:</strong> Production systems accessible only to authorised personnel;</li>
+            <li><strong>Webhook verification:</strong> HMAC validation for Shopify callbacks;</li>
+            <li><strong>Hosting security:</strong> As described by our infrastructure provider (see Subprocessors page).</li>
+        </ul>
+        <p>Encryption at rest and other hosting security features depend on our database/hosting tier; see Render&rsquo;s documentation and our Subprocessors page.</p>
+
+        <h3>5.2 Sub-processors</h3>
+        <p>Aserta uses sub-processors to host and operate the Service, including:</p>
+        <ul>
+            <li><strong>Render</strong> — application and database hosting (United States);</li>
+            <li><strong>Shopify</strong> — platform API, billing integration, and mandatory compliance webhooks.</li>
+        </ul>
+        <p>Current sub-processors, locations, and roles are published at <a href="https://getaserta.com/subprocessors.html">https://getaserta.com/subprocessors.html</a>.</p>
+        <p>We will give reasonable notice (aiming for at least <strong>30 days</strong>) before a new sub-processor processes personal data under this DPA. You may object within that period by emailing <a href="mailto:dpo@getaserta.com">dpo@getaserta.com</a>.</p>
+
+        <h3>5.3 International data transfers</h3>
+        <p>Aserta&rsquo;s application database is hosted in the <strong>United States</strong> (Render). Where personal data is transferred outside the UK, Aserta uses appropriate safeguards, which may include the UK <strong>International Data Transfer Agreement (IDTA)</strong> and/or UK Addendum to EU Standard Contractual Clauses with sub-processors, and Shopify&rsquo;s contractual transfer mechanisms for data processed through the Shopify platform.</p>
+
+        <h2>6. Data subject rights and Shopify GDPR webhooks</h2>
+        <h3>6.1 Controller responsibilities</h3>
+        <p>The Controller is responsible for responding to data subject requests relating to personal data in their store. Aserta will assist the Controller, where reasonable, with requests that relate to personal data processed under this DPA.</p>
+
+        <h3>6.2 Shopify mandatory webhooks</h3>
+        <p>Aserta implements Shopify&rsquo;s mandatory endpoints (<code>customers/data_request</code>, <code>customers/redact</code>, <code>shop/redact</code>). Because the Service focuses on <strong>product catalogue text</strong> and Aserta does <strong>not</strong> routinely store end-customer profile or order data, these webhooks typically require no additional deletion beyond confirming Aserta holds no relevant records. If personal data were present in our systems, Aserta would delete it within a reasonable period.</p>
+
+        <h3>6.3 Assistance</h3>
+        <p>Upon the Controller&rsquo;s written request relating to personal data processed under this DPA, Aserta will respond within <strong>one month</strong>, unless a longer period is permitted by law. Requests may include access, rectification, erasure, restriction, or portability where applicable and technically feasible.</p>
+
+        <h2>7. Personal data breaches</h2>
+        <h3>7.1 Notification to Controller</h3>
+        <p>If Aserta becomes aware of a personal data breach affecting personal data processed under this DPA, Aserta will notify the Controller <strong>without undue delay</strong> after becoming aware of the breach, and provide information reasonably available about the nature of the breach, likely consequences, and measures taken or proposed.</p>
+
+        <h3>7.2 Investigation</h3>
+        <p>Aserta will investigate the breach, take reasonable steps to mitigate harm, and cooperate with the Controller regarding supervisory authority notifications where required.</p>
+
+        <h2>8. Cooperation and Audits</h2>
+        <h3>8.1 Cooperation with Data Subjects</h3>
+        <p>Aserta will cooperate with data subjects' requests for access, correction, deletion, and other rights. The Controller may direct such requests to Aserta, and Aserta will respond within 30 days.</p>
+
+        <h3>8.2 Cooperation with Supervisory Authorities</h3>
+        <p>Aserta will cooperate with requests from the UK Information Commissioner's Office (ICO) and other data protection authorities. The Controller will be informed of such requests (unless legally prohibited).</p>
+
+        <h3>8.3 Audits</h3>
+        <p>Upon reasonable written request, Aserta will provide information necessary to demonstrate compliance with this DPA. The Controller may audit Aserta&rsquo;s compliance no more than once per year on reasonable notice, unless required by a supervisory authority or following a material breach.</p>
+
+        <h2>9. Data retention and deletion</h2>
+        <h3>9.1 Retention</h3>
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Retention</th>
+            </tr>
+            <tr>
+                <td>Product data processed under this DPA</td>
+                <td>Processed on demand via API while the app is installed; audit outputs remain in your Shopify store until you change or remove them</td>
+            </tr>
+            <tr>
+                <td>Monitored product IDs on Aserta systems</td>
+                <td>While the app is installed (see Privacy Policy for controller data)</td>
+            </tr>
+            <tr>
+                <td>Hosting backups</td>
+                <td>Up to 90 days after deletion, for disaster recovery only</td>
+            </tr>
+            <tr>
+                <td>Server/security logs</td>
+                <td>Limited operational period for security and troubleshooting</td>
+            </tr>
+        </table>
+
+        <h3>9.2 Deletion on uninstall</h3>
+        <p>When the Controller uninstalls the app, Aserta deletes active store connection records <strong>promptly</strong> (including OAuth credentials). A limited grace-period record may be retained until a prepaid period expires (see Privacy Policy). Processing of product data under this DPA ceases when the app is uninstalled or access is revoked.</p>
+
+        <h2>10. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, Aserta's liability under this DPA shall be limited to the fees paid by the Controller in the 12 months preceding the claim, or £50, whichever is greater. This limitation does not apply to:</p>
+        <ul>
+            <li>Data breaches caused by Aserta's negligence or willful misconduct</li>
+            <li>Violations of the Controller's explicit instructions</li>
+            <li>Breach of confidentiality obligations</li>
+        </ul>
+
+        <h2>11. Confidentiality</h2>
+        <p>Aserta ensures that all personnel with access to personal data are bound by confidentiality agreements. Personnel will not disclose personal data to third parties without authorization, except as required by law.</p>
+
+        <h2>12. Term and Termination</h2>
+        <h3>12.1 Term</h3>
+        <p>This DPA commences when the Controller installs the Aserta app and continues for the duration of the service agreement.</p>
+
+        <h3>12.2 Termination</h3>
+        <p>Upon termination of the Service (including app uninstall):</p>
+        <ul>
+            <li>Aserta will cease processing personal data under this DPA;</li>
+            <li>Delete active connection credentials promptly, subject to the retention described in Section 9 and the Privacy Policy;</li>
+            <li>Provide confirmation of deletion on reasonable written request.</li>
+        </ul>
+
+        <h2>13. Governing Law and Dispute Resolution</h2>
+        <p>This DPA shall be governed by the laws of England and Wales and the UK GDPR. Any disputes arising from this DPA shall be resolved through the courts of England and Wales, in accordance with the dispute resolution procedures outlined in our Terms of Service.</p>
+
+        <h2>14. Contact Information</h2>
+        <p>For questions about this DPA or data protection compliance, please contact:</p>
+        <p><strong>Data Protection Officer (DPO):</strong><br>
+        Email: <strong>dpo@getaserta.com</strong><br>
+        Postal Address: Aserta Ltd, Eldridge Gardens, Romsey, Hampshire, United Kingdom</p>
+
+        <h2>15. Changes to This DPA</h2>
+        <p>Aserta may update this DPA to comply with changes in data protection laws. Material changes will be communicated to the Controller with 30 days' notice. Continued use of the Service constitutes acceptance of updated terms.</p>
+
+        <div class="signature-block">
+            <h2>Acceptance</h2>
+            <p>By installing the Aserta app, the Controller accepts this DPA as part of the agreement to use the Service. If you require a countersigned copy, contact <a href="mailto:dpo@getaserta.com">dpo@getaserta.com</a>.</p>
+            <p><strong>Aserta Ltd</strong><br>
+            Eldridge Gardens, Romsey, Hampshire, United Kingdom<br>
+            Effective date: 16 June 2026 &middot; Version 1.1</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Aserta Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

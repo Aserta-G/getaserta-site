@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subprocessors | Aserta</title>
+    <style>
+        :root {
+            --primary: #1F4F82;
+            --text-dark: #111827;
+            --text-light: #6d7175;
+            --bg-brand-light: #E0EDEE;
+            --success: #1F7A4D;
+        }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+        }
+        body { 
+            color: var(--text-dark); 
+            line-height: 1.6; 
+            background-color: white; 
+        }
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+        }
+        nav { 
+            padding: 15px 0; 
+            border-bottom: 1px solid var(--bg-brand-light); 
+        }
+        .nav-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .logo img { 
+            height: 50px; 
+            width: auto; 
+        }
+        .back-link {
+            text-decoration: none; 
+            color: var(--text-light); 
+            font-weight: 600;
+        }
+        .back-link:hover {
+            color: var(--primary);
+        }
+        h1 { 
+            font-size: 2.5rem; 
+            margin-bottom: 10px; 
+            color: var(--text-dark);
+        }
+        h2 { 
+            font-size: 1.5rem; 
+            margin-top: 40px; 
+            margin-bottom: 15px; 
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--bg-brand-light);
+            padding-bottom: 10px;
+        }
+        h3 {
+            font-size: 1.1rem;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        li {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+        p { 
+            font-size: 0.95rem; 
+            color: var(--text-light); 
+            margin-bottom: 15px; 
+        }
+        .last-updated { 
+            font-size: 0.875rem; 
+            color: var(--text-light); 
+            margin-bottom: 40px; 
+            display: block; 
+        }
+        .info-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table th, table td {
+            border: 1px solid var(--bg-brand-light);
+            padding: 15px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f9fafb;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        table tr:hover {
+            background-color: #f9fafb;
+        }
+        .subprocessor-item {
+            background-color: #f9fafb;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .subprocessor-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        .subprocessor-function {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+        .subprocessor-details {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .status-active {
+            background-color: #e3f9e5;
+            color: var(--success);
+        }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer { 
+            background: var(--primary); 
+            color: white; 
+            text-align: center; 
+            padding: 40px 0; 
+            margin-top: 60px; 
+        }
+        footer p {
+            color: white;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.2rem; }
+            table { font-size: 0.9rem; }
+            table th, table td { padding: 10px; }
+            .container { padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="/assets/asertalogo.png" alt="Aserta">
+            </a>
+            <a href="/" class="back-link">&larr; Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Subprocessors</h1>
+        <span class="last-updated">Last updated: 16 June 2026 &middot; Previous version: 5 March 2026</span>
+
+        <div class="info-box">
+            <strong>About this page</strong>
+            <p style="margin-top: 10px;">This page lists third parties Aserta Ltd uses to host and operate the Aserta Shopify app. It should be read with our <a href="https://getaserta.com/privacy.html">Privacy Policy</a> and <a href="https://getaserta.com/data-processing-agreement.html">Data Processing Agreement (DPA)</a>.</p>
+            <p><strong>Controller and processor roles:</strong> Aserta acts as <strong>data controller</strong> for merchant account data (e.g. shop domain, OAuth credentials, subscription state). Aserta acts as <strong>data processor</strong> when auditing product catalogue text on your instructions. The parties listed below support both aspects of the service.</p>
+            <p>When we process product data as your processor, these parties are our <strong>sub-processors</strong> under the DPA. If you object to a new sub-processor, contact <a href="mailto:dpo@getaserta.com">dpo@getaserta.com</a> within 30 days of notification.</p>
+        </div>
+
+        <h2>How we use subprocessors</h2>
+        <p>We do not sell merchant data. We engage infrastructure and platform providers only to deliver the app. We require appropriate contractual safeguards, including data processing terms and transfer mechanisms where data is hosted outside the UK.</p>
+
+        <h2>Current Subprocessors</h2>
+
+        <div class="subprocessor-item">
+            <div class="subprocessor-name">Render</div>
+            <div class="subprocessor-function"><strong>Function:</strong> Cloud Hosting Provider</div>
+            <div class="subprocessor-details">
+                <p><strong>Purpose:</strong> Render hosts the Aserta application, API, and PostgreSQL database in the <strong>United States</strong>.</p>
+                <p><strong>Data processed:</strong> Merchant account data Aserta controls (shop domain, display name, OAuth token, subscription/trial fields, monitored product IDs) and product audit data Aserta processes on your instructions. Product descriptions are generally not personal data unless they identify an individual.</p>
+                <p><strong>Aserta&rsquo;s role:</strong> Render is Aserta&rsquo;s infrastructure provider. When Aserta processes your product data as your processor, Render acts as Aserta&rsquo;s <strong>sub-processor</strong>.</p>
+                <p><strong>Location:</strong> United States</p>
+                <p><strong>Security:</strong> TLS for data in transit; hosting security as described in Render&rsquo;s documentation (including encryption at rest where enabled for our database tier).</p>
+                <p><strong>Privacy policy:</strong> <a href="https://render.com/privacy" target="_blank" rel="noopener">render.com/privacy</a></p>
+                <p><strong>DPA:</strong> Render offers a Data Processing Addendum — contact <a href="mailto:dpo@getaserta.com">dpo@getaserta.com</a> if you need details of Aserta&rsquo;s arrangements with Render.</p>
+                <span class="status-badge status-active">Active since: 2025</span>
+            </div>
+        </div>
+
+        <div class="subprocessor-item">
+            <div class="subprocessor-name">Netlify</div>
+            <div class="subprocessor-function"><strong>Function:</strong> Public website hosting and enquiry forms</div>
+            <div class="subprocessor-details">
+                <p><strong>Purpose:</strong> Netlify hosts <strong>getaserta.com</strong> and processes the Shop in a Day request form so we can reply to enquiries.</p>
+                <p><strong>Data processed:</strong> Form fields you submit (name, email, optional company and shop URL, package choice, message) and standard hosting logs.</p>
+                <p><strong>Aserta&rsquo;s role:</strong> Aserta is the controller for website enquiries. Netlify is our website host. This is separate from Shopify app product-audit processing.</p>
+                <p><strong>Location:</strong> United States / Netlify infrastructure</p>
+                <p><strong>Privacy policy:</strong> <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">netlify.com/privacy</a></p>
+                <span class="status-badge status-active">Active since: 2026</span>
+            </div>
+        </div>
+
+        <div class="subprocessor-item">
+            <div class="subprocessor-name">Shopify</div>
+            <div class="subprocessor-function"><strong>Function:</strong> API Integration & Data Access</div>
+            <div class="subprocessor-details">
+                <p><strong>Purpose:</strong> Shopify provides the commerce platform and Admin API through which you authorise Aserta to access your store. App billing for Aserta modules is handled through Shopify&rsquo;s billing systems.</p>
+                <p><strong>Data processed:</strong> Store and product data read or written via the Shopify API (e.g. product titles, descriptions, tags, metafields); OAuth authorisation; subscription status from Shopify; mandatory GDPR webhooks (<code>customers/data_request</code>, <code>customers/redact</code>, <code>shop/redact</code>).</p>
+                <p><strong>Roles:</strong> <strong>You</strong> are the controller for your store and product data. <strong>Aserta</strong> is your processor for product compliance audits. <strong>Shopify</strong> is an independent controller for its own platform services (and handles payment data we do not receive). Aserta lists Shopify here because API access, billing, and webhooks run through Shopify&rsquo;s systems.</p>
+                <p><strong>Location:</strong> United States / Canada (Shopify infrastructure)</p>
+                <p><strong>Privacy policy:</strong> <a href="https://www.shopify.com/legal/privacy" target="_blank" rel="noopener">shopify.com/legal/privacy</a></p>
+                <p><strong>Transfers:</strong> Shopify&rsquo;s contractual transfer mechanisms apply to data processed through the Shopify platform. See Shopify&rsquo;s Data Processing Addendum and our <a href="https://getaserta.com/data-processing-agreement.html">DPA</a>.</p>
+                <span class="status-badge status-active">Active since: 2025</span>
+            </div>
+        </div>
+
+        <h2>Planned subprocessors (not in use today)</h2>
+        <p>We do <strong>not</strong> currently use the services below. We will update this page and our <a href="https://getaserta.com/privacy.html">Privacy Policy</a> before any of them process personal data:</p>
+
+        <table>
+            <tr>
+                <th>Subprocessor Name</th>
+                <th>Function</th>
+                <th>Status</th>
+                <th>Expected Integration</th>
+            </tr>
+            <tr>
+                <td><strong>SendGrid</strong> (Twilio)</td>
+                <td>Email notifications for compliance alerts and billing updates</td>
+                <td>Under Evaluation</td>
+                <td>Q3 2026</td>
+            </tr>
+            <tr>
+                <td><strong>Sentry</strong></td>
+                <td>Error logging and application monitoring</td>
+                <td>Under Evaluation</td>
+                <td>Q2 2026</td>
+            </tr>
+        </table>
+
+        <h2>Policy on subprocessor changes</h2>
+        <h3>Notification</h3>
+        <p>Before engaging a new sub-processor that will process personal data on your behalf, we will provide reasonable notice by:</p>
+        <ul>
+            <li>Updating this Subprocessors page;</li>
+            <li>Updating our Privacy Policy where material; and</li>
+            <li>Notifying merchants in the Aserta app or via Shopify partner communications where appropriate.</li>
+        </ul>
+        <p>We aim to give at least <strong>30 days&rsquo; notice</strong> before a new sub-processor begins processing personal data under the DPA.</p>
+
+        <h3>Right to object</h3>
+        <p>Under our DPA, you may object to a new sub-processor within <strong>30 days</strong> of notification. Email <a href="mailto:dpo@getaserta.com">dpo@getaserta.com</a> with subject line <strong>Subprocessor Objection — [name]</strong>. We will consider objections in good faith and discuss alternatives where reasonable.</p>
+
+        <h2>Standards we require</h2>
+        <p>Sub-processors must provide appropriate contractual commitments, including:</p>
+        <ul>
+            <li>Processing only on documented instructions (where acting as Aserta&rsquo;s sub-processor);</li>
+            <li>UK GDPR–aligned data protection terms;</li>
+            <li>Encryption in transit (TLS);</li>
+            <li>Appropriate access controls; and</li>
+            <li>International transfer safeguards where data leaves the UK.</li>
+        </ul>
+
+        <h2>Your rights</h2>
+        <p>As a merchant using Aserta, you can:</p>
+        <ul>
+            <li>Review who supports our service on this page;</li>
+            <li>Object to new sub-processors under the DPA within the notification period;</li>
+            <li>Request information via <a href="mailto:dpo@getaserta.com">dpo@getaserta.com</a>; and</li>
+            <li>Terminate the app if you do not accept a material sub-processor change.</li>
+        </ul>
+
+        <h2>Questions</h2>
+        <p>Contact our data protection contact:<br>
+        <strong><a href="mailto:dpo@getaserta.com">dpo@getaserta.com</a></strong><br>
+        Aserta Ltd, Eldridge Gardens, Romsey, Hampshire, United Kingdom</p>
+
+        <h2>Change Log</h2>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Change</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>2026-06-16</td>
+                <td>Controller/processor alignment</td>
+                <td>Aligned with Privacy Policy (16 June 2026): roles, Render/Shopify descriptions, notification process</td>
+            </tr>
+            <tr>
+                <td>2026-03-05</td>
+                <td>Page created</td>
+                <td>Initial list published: Render and Shopify</td>
+            </tr>
+        </table>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Aserta Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

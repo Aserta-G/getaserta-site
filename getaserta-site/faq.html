@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Aserta Compliance</title>
+    <style>
+        :root {
+            --primary: #1F4F82;
+            --primary-hover: #163a61;
+            --text-dark: #111827;
+            --text-light: #6d7175;
+            --bg-brand-light: #E0EDEE;
+            --bg-white: #ffffff;
+            --border: #cbd5e1;
+            --success: #1F7A4D;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { color: var(--text-dark); line-height: 1.6; background-color: var(--bg-white); }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        nav { padding: 15px 0; background-color: var(--bg-white); border-bottom: 1px solid var(--bg-brand-light); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .logo img { height: 64px; width: auto; }
+        section { padding: 60px 0; }
+        .faq-header { text-align: center; margin-bottom: 50px; }
+        h1 { font-size: 3rem; margin-bottom: 1rem; }
+        details { background: white; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        summary { padding: 20px; font-size: 1.25rem; font-weight: 600; color: var(--primary); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::after { content: '+'; font-size: 1.5rem; }
+        details[open] summary::after { content: '−'; }
+        .faq-answer { padding: 20px; background-color: #f8fafc; border-top: 1px solid var(--bg-brand-light); }
+        .faq-answer p { margin-bottom: 12px; }
+        .faq-answer p:last-child { margin-bottom: 0; }
+        .faq-answer ul, .faq-answer ol { margin: 10px 0 12px 20px; }
+        .faq-answer li { margin-bottom: 6px; }
+        .faq-section-label { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-light); margin: 40px 0 20px; padding-bottom: 8px; border-bottom: 1px solid var(--bg-brand-light); }
+        .faq-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+        .faq-table th, .faq-table td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
+        .faq-table th { background: #eef4f8; color: var(--primary); font-weight: 600; }
+        .faq-callout { margin-top: 15px; padding: 12px 14px; border-left: 4px solid var(--primary); background: #eef4f8; font-style: italic; }
+        footer { background: var(--primary); color: white; text-align: center; padding: 40px 0; margin-top: 60px; }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+
+        /* Support Widget Styles */
+        .support-widget-container { position: fixed; bottom: 30px; right: 30px; z-index: 9999; }
+        .support-fab { background-color: var(--primary); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; }
+        .support-box { display: none; position: absolute; bottom: 80px; right: 0; width: 320px; background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 1px solid var(--bg-brand-light); overflow: hidden; }
+        .support-header { background-color: var(--primary); color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .support-body { padding: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="/assets/asertalogo.png" alt="Aserta"></a>
+            <div style="display:flex; align-items:center; gap:20px;">
+                <a href="shop-in-a-day.html" style="color: var(--text-dark); text-decoration: none; font-weight: 600;">Shop in a Day</a>
+                <a href="https://apps.shopify.com/aserta" class="btn-outline">Install on Shopify</a>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+            <div class="faq-header">
+                <h1>Frequently Asked Questions</h1>
+                <p>Technical and operational details for the Aserta Shopify application.</p>
+            </div>
+
+            <details>
+                <summary>What exactly does Aserta do?</summary>
+                <div class="faq-answer">
+                    <p>Aserta acts as your automated regulatory engine. It securely connects to your Shopify store and allows you to scan your product descriptions against official regulatory databases. It automatically detects and formats (emboldens or shows warnings) the regulated food allergens, saving you hours of manual data entry while helping you avoid trading standards fines.</p>
+                </div>
+            </details> 
+            <details>
+                <summary>Which regulatory frameworks do you support?</summary>
+                <div class="faq-answer">
+                    <p>We currently offer specific modules for the most heavily regulated markets:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>UK Food Labeling:</strong> Natasha's Law & the 14 Major Allergens</li>
+                        <li><strong>US Food (Coming soon):</strong> FDA Big 9 Allergens</li>
+                        <li><strong>California (Coming soon):</strong> Proposition 65 Warning Regulations</li>
+                        <li><strong>AU/NZ Beauty (Coming soon):</strong> INCI quality & SUSMP substance screening on product pages</li>
+                        <li><strong>AU/NZ SPF Add-on:</strong> Advisory sunscreen presentation checks (requires AU/NZ Beauty)</li>
+                    </ul>
+                    <p style="margin-top: 12px; font-size: 0.95rem; color: var(--text-light);">Aserta scans <strong>Shopify product description text</strong> — not physical labels, packaging, or regulator certificates. Some modules apply automatic formatting (e.g. UK allergen bolding); others flag <strong>Needs Review</strong> for your team to verify.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Why does Aserta flag my product when oils or ingredients are named in the description but not in the ingredient list?</summary>
+                <div class="faq-answer">
+                    <p>For food and cosmetic products, regulators care about what appears in your <strong>formal ingredient declaration</strong> — usually the labelled <strong>“Ingredients:”</strong> section — not only what you say elsewhere in the product story.</p>
+
+                    <p>It is common for merchants to describe variants in marketing copy — for example, “with Bergamot essential oil” or “with Tea Tree essential oil” — while the ingredient list still says something vague like <em>“essential oils”</em>. That can still be a compliance weakness for markets such as <strong>AU/NZ cosmetics</strong>, which expect <strong>specific INCI names</strong> (not umbrella terms or marketing language) in the declared list.</p>
+
+                    <p><strong>What Aserta checks:</strong> Aserta primarily reviews the ingredient declaration in your product description. It may flag vague terms (e.g. “essential oils”), marketing words inside the list (e.g. “organic”), common names where INCI names are expected (e.g. “water” instead of “Aqua”), or lists that look incomplete. That is why a product can correctly show <strong>Needs Review</strong> even when the rest of the description sounds more specific.</p>
+
+                    <p><strong>What Aserta does not assume:</strong> We do not treat marketing copy as a substitute for a proper ingredient list. If an ingredient is mentioned only in the body text — or only implied by a variant name — it may not be treated as fully declared for audit purposes.</p>
+
+                    <p><strong>Variant products:</strong> On many Shopify stores, selecting a variant (e.g. Bergamot vs Tea Tree) changes the title or option label but <strong>does not change the shared product description</strong>. If each variant contains different actives, you may need <strong>separate ingredient declarations per variant or per SKU</strong>, not one vague list for all options. Aserta audits the product description Shopify provides; it cannot infer variant-specific ingredients that are not declared in that text.</p>
+
+                    <p><strong>What you should do as a merchant:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Make sure every ingredient consumers need to know appears in the formal <strong>Ingredients:</strong> list, using the correct market format (e.g. INCI for AU/NZ cosmetics).</li>
+                        <li>Replace vague terms (“essential oils”, “botanical extract”) with specific INCI names where required.</li>
+                        <li>If variants differ by formula, ensure each variant’s declared list matches what is actually in that SKU — or split into separate products where appropriate.</li>
+                        <li>Treat Aserta’s <strong>Needs Review</strong> status as a prompt to verify your label with your own quality process; it is automated assistance, not legal sign-off.</li>
+                    </ul>
+
+                    <p style="margin-top: 15px; font-size: 0.95rem; color: var(--text-light);"><em>Example:</em> A hair spray described as “ACV mix with Bergamot essential oil” in the sales copy, but listing only <em>“water, organic apple cider vinegar, essential oils”</em> under Ingredients, would reasonably attract review — the list does not name Bergamot (or Tea Tree, for the other variant) in INCI form, even though the description mentions them.</p>
+                </div>
+            </details>
+
+            <p class="faq-section-label">Ingredients &amp; disclaimers</p>
+
+            <details>
+                <summary>We say &ldquo;check the packaging for correct ingredients&rdquo; — is that enough for compliance?</summary>
+                <div class="faq-answer">
+                    <p><strong>No.</strong> A line such as <em>&ldquo;Due to regulatory labelling issues, ingredients may change — check the packaging for the correct ingredients&rdquo;</em> is <strong>not</strong> a substitute for a proper ingredient declaration on your <strong>Shopify product page</strong>. It is a caution to customers, not a compliance exemption.</p>
+
+                    <p>When someone buys online, regulators and trading standards generally expect ingredient information <strong>where the customer decides to purchase</strong> — on the product page or equivalent point-of-sale information — not only on the physical pack after delivery. That applies across the modules Aserta supports, including those not yet available:</p>
+                    <ul>
+                        <li><strong>AU/NZ cosmetics</strong> — a full <strong>Ingredients:</strong> list (INCI-style) is still expected on the page; &ldquo;see packaging&rdquo; does not replace it.</li>
+                        <li><strong>UK / US food</strong> — allergen information must be available in a usable form on the listing; a vague disclaimer does not help someone with an allergy choose safely online.</li>
+                        <li><strong>Sunscreen / SPF</strong> — general disclaimers do not waive SPF, ARTG, or composition presentation rules on the PDP.</li>
+                    </ul>
+
+                    <p><strong>When a disclaimer can help:</strong> If you already publish a <strong>complete, correct ingredient list</strong> on the product page, a short note that formulations may occasionally change can sit <strong>alongside</strong> that list — as a supplement, not a replacement.</p>
+
+                    <p><strong>When it does not help:</strong> Marketing copy or a disclaimer <strong>instead of</strong> an <strong>Ingredients:</strong> section, US Active/Inactive blocks without a full list, or partial lists plus &ldquo;check the box&rdquo; — the online listing still has a gap.</p>
+
+                    <p><strong>What Aserta does:</strong> Aserta scans formal composition sections (<strong>Ingredients:</strong>, <strong>UV Filters:</strong>, <strong>Contains:</strong>, and similar). General disclaimers in body text are <strong>not</strong> treated as ingredient declarations. A page with only a packaging disclaimer and no proper list will still show <strong>Needs Review</strong> or &ldquo;no ingredient list found&rdquo; — the same as if the disclaimer were not there.</p>
+
+                    <div class="faq-callout">
+                        &ldquo;Check the packaging&rdquo; tells customers you are not standing behind your online copy. It does not satisfy ingredient-labelling expectations for most markets and it will not clear an Aserta Needs Review. List ingredients properly on the product page; use the disclaimer only <strong>with</strong> a full list if you need to cover reformulations.
+                    </div>
+                </div>
+            </details>
+
+            <p class="faq-section-label">UK Food &amp; allergen emphasis</p>
+
+            <details>
+                <summary>Our oats are gluten-free. Do we still have to emphasise &ldquo;oats&rdquo; in the ingredients list?</summary>
+                <div class="faq-answer">
+                    <p><strong>Yes.</strong> A &ldquo;gluten-free&rdquo; claim is about the <strong>level of gluten</strong> in the food &mdash; it is not an allergen-labelling exemption. Oats are a regulated allergen in their own right: one of the &ldquo;cereals containing gluten&rdquo; listed in Annex II of the Food Information Regulations (assimilated Regulation (EU) No 1169/2011, &ldquo;FIC&rdquo;). The word <strong>oats</strong> must still be declared and <strong>emphasised</strong> (for example in bold) every time it appears in the ingredients list, even when the finished product is labelled gluten-free.</p>
+
+                    <p>Industry and regulator guidance say this directly:</p>
+                    <div class="faq-callout">
+                        As oats are a regulated allergenic food under Annex II of the FIC Regulation, the reference to oats in the ingredients list must still be emphasised (e.g. in bold). This is also the case for specially produced gluten-free oats (e.g. Ingredients: gluten-free oats, sugar).
+                    </div>
+
+                    <p>The gluten-free claim only certifies the product contains no more than <strong>20&nbsp;mg/kg of gluten</strong> (Commission Implementing Regulation (EU) No 828/2014). It does not remove the duty to name and emphasise the allergenic cereal that is present.</p>
+
+                    <p style="margin-top: 12px; font-size: 0.95rem; color: var(--text-light);">Source: <a href="https://www.food.gov.uk/business-guidance/food-allergen-labelling-and-information-requirements-technical-guidance-part-1-guidance-for-businesses-providing-prepacked-food">FSA Food allergen labelling technical guidance</a>, para 31 (Articles 9(1)(c) &amp; 21, Annex II).</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>We&rsquo;re labelled gluten-free. Does that cover us for allergen labelling generally?</summary>
+                <div class="faq-answer">
+                    <p><strong>No &mdash; and it is narrower than most people assume.</strong> A gluten-free claim addresses <strong>one thing only: the level of gluten in the food</strong>. It does not switch off any of the 14-allergen rules:</p>
+                    <ul>
+                        <li><strong>The gluten-containing cereal still must be declared and emphasised.</strong> Gluten-free oats still get &ldquo;oats&rdquo; emphasised; a product made with gluten-reduced wheat starch still emphasises &ldquo;wheat&rdquo;. The claim sits <em>alongside</em> the allergen declaration, it does not replace it.</li>
+                        <li><strong>It says nothing about the other 13 allergens.</strong> Milk, egg, soya, peanuts, tree nuts, sesame, mustard, celery, fish, crustaceans, molluscs, lupin and sulphites are independent of gluten. If they are in the recipe, each must be declared and emphasised in the ingredients list regardless of any gluten-free claim.</li>
+                        <li><strong>It is not a &ldquo;free-from&rdquo; claim for anything else.</strong> &ldquo;Gluten-free&rdquo; is not &ldquo;milk-free&rdquo; or &ldquo;nut-free&rdquo;. Each standalone &ldquo;free-from&rdquo; claim needs its own rigorous controls.</li>
+                        <li><strong>It does not resolve cross-contamination for other allergens.</strong> Precautionary (&ldquo;may contain&rdquo;) labelling for other allergens is judged separately from gluten-free status.</li>
+                    </ul>
+                    <div class="faq-callout">
+                        Gluten-free is a tightly-defined claim about gluten only. Every allergen present &mdash; including the gluten cereal itself &mdash; must still be named and emphasised in the ingredients list.
+                    </div>
+                    <p style="margin-top: 12px; font-size: 0.95rem; color: var(--text-light);">Sources: <a href="https://www.food.gov.uk/business-guidance/food-allergen-labelling-and-information-requirements-technical-guidance-part-1-guidance-for-businesses-providing-prepacked-food">FSA technical guidance (Part 1)</a>; <a href="https://www.food.gov.uk/business-guidance/allergen-labelling-for-food-manufacturers">FSA allergen labelling for manufacturers</a>; Regulation (EU) No 1169/2011, Articles 9(1)(c) &amp; 21 and Annex II; Reg. (EU) No 828/2014.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Our whole ingredients list is in capital letters. Are the allergens &ldquo;emphasised&rdquo;?</summary>
+                <div class="faq-answer">
+                    <p><strong>Only if they contrast with the rest of the list.</strong> Capital letters are an accepted method of emphasis, but Article 21 requires allergens to be distinguished <strong>from the other ingredients</strong> &ldquo;by means of the font, style or background colour&rdquo;. If the <em>entire</em> list is already in capitals, the allergens do not stand out from anything &mdash; so capitalisation alone is <strong>not</strong> valid emphasis.</p>
+                    <ul>
+                        <li>&#9989; Compliant: <em>Oats, sunflower oil, prawn (crustacean)</em> with allergens in <strong>bold</strong>.</li>
+                        <li>&#9989; Compliant: <em>20% Gluten Free OATS, sunflower oil, cane sugar</em> &mdash; caps allergen contrasts with normal-case text.</li>
+                        <li>&#10060; Not compliant: <em>20% GLUTEN FREE OATS, SUNFLOWER OIL, CANE SUGAR</em> &mdash; uniform caps, no contrast.</li>
+                    </ul>
+                    <p>Tip: add an allergy-advice line such as <em>&ldquo;Allergy advice: for allergens, including cereals containing gluten, see ingredients in bold.&rdquo;</em></p>
+                    <p style="margin-top: 12px; font-size: 0.95rem; color: var(--text-light);">Source: <a href="https://www.food.gov.uk/business-guidance/food-allergen-labelling-and-information-requirements-technical-guidance-part-1-guidance-for-businesses-providing-prepacked-food">FSA Food allergen labelling technical guidance</a>, paras 58&ndash;59 &amp; 101.</p>
+                </div>
+            </details>
+
+            <p class="faq-section-label">AU/NZ &amp; cross-border merchants</p>
+
+            <details>
+                <summary>Our products are US-made and US-compliant. We use the same Shopify descriptions in Australia and New Zealand — why does Aserta show Needs Review?</summary>
+                <div class="faq-answer">
+                    <p><strong>Needs Review does not mean your product is illegal or that you failed US rules.</strong> It means Aserta found a gap between your <strong>Shopify product page (PDP)</strong> and what AU/NZ-oriented presentation usually expects — based on the description text alone.</p>
+
+                    <p>This is very common for cross-border merchants:</p>
+                    <ul>
+                        <li>Your <strong>physical label</strong> may follow US FDA rules correctly (for example <strong>Active Ingredients / Inactive Ingredients</strong> lists).</li>
+                        <li>Your <strong>Shopify page</strong> may still be a copy-paste from your US store — same wording, same layout.</li>
+                        <li><strong>AU/NZ product pages</strong> typically expect a single <strong>Ingredients:</strong> list in INCI-style naming, not US drug-facts formatting.</li>
+                        <li>For <strong>sunscreen-like products</strong>, AU/NZ pages often also show <strong>SPF</strong> and (where applicable) an <strong>AUST L / ARTG</strong> reference. If those appear on packaging but not in the Shopify description, Aserta will flag the <strong>page</strong>, not judge your entire business.</li>
+                    </ul>
+
+                    <p>Your US compliance work and your <strong>live Shopify copy for AU/NZ customers</strong> are related but not identical. Consultants review labels; staff edit Shopify. Aserta watches the <strong>PDP</strong> so that gap does not grow quietly across your catalogue.</p>
+
+                    <p><strong>What common Aserta messages mean</strong></p>
+                    <table class="faq-table">
+                        <thead>
+                            <tr>
+                                <th>Aserta message (examples)</th>
+                                <th>What it usually means</th>
+                                <th>What it does <em>not</em> mean</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>No <strong>Ingredients:</strong> section — partial composition only</td>
+                                <td>Page uses UV Filters, Contains, or Active/Inactive blocks instead of a full INCI-style list</td>
+                                <td>Your formulation is wrong</td>
+                            </tr>
+                            <tr>
+                                <td>US-style <strong>Active/Inactive</strong> format</td>
+                                <td>Common on US pages; AU/NZ PDPs usually use one <strong>Ingredients:</strong> list</td>
+                                <td>You cannot sell in AU/NZ</td>
+                            </tr>
+                            <tr>
+                                <td>No <strong>AUST L / ARTG</strong> on the product page</td>
+                                <td>Sunscreen-like page with no listing reference visible in Shopify text</td>
+                                <td>You are definitely unregistered (ARTG may be on the label only)</td>
+                            </tr>
+                            <tr>
+                                <td>Vague or marketing terms in a list (e.g. “Vit E”)</td>
+                                <td>INCI naming suggestion for the <strong>online</strong> list</td>
+                                <td>Automatic compliance failure</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p><strong>What to do</strong></p>
+                    <ol>
+                        <li><strong>Do not panic</strong> — treat Needs Review as a <strong>to-do list for your Shopify copy</strong>, not a stop-sale order.</li>
+                        <li><strong>Compare label to page</strong> — if the label is correct for AU/NZ but the PDP is still US-formatted, update the description (add an <strong>Ingredients:</strong> INCI block; add ARTG/AUST L if it belongs on the customer-facing page).</li>
+                        <li><strong>Keep US copy for the US store</strong> — many merchants use Shopify Markets or separate listings so each territory gets appropriate text. Aserta audits what is on <strong>this</strong> product page.</li>
+                        <li><strong>Use your consultant for judgment</strong> — primary vs secondary sunscreen, ARTG scope, and claims still need human expertise.</li>
+                        <li><strong>Re-audit after you edit</strong> — when you save the product, Aserta re-scans automatically.</li>
+                    </ol>
+
+                    <div class="faq-callout">
+                        We followed US rules on the product. Aserta is telling us our <strong>Australian Shopify listing</strong> still reads like a US page. Fix the online ingredients layout (and sunscreen references if needed) — the product is not necessarily wrong, but the <strong>PDP</strong> needs attention.
+                    </div>
+                </div>
+            </details>
+
+            <details>
+                <summary>We sell in several countries from one catalogue. Will Aserta flag products that are fine for other markets?</summary>
+                <div class="faq-answer">
+                    <p>Aserta checks <strong>the product description on the page it can see</strong> against the modules you have activated (AU/NZ Beauty, SPF Add-on, UK Food, and so on). It does not know your internal “this SKU is US-only” rules unless that is reflected in what you publish.</p>
+
+                    <p>If you sell into AU/NZ, the operational standard is: <strong>the Shopify text your AU/NZ customers see should match AU/NZ expectations</strong> — even when the same SKU is also sold elsewhere. If you use one global description for every market, Aserta may flag AU/NZ gaps that would be acceptable on a US storefront. That is working as designed: it surfaces <strong>market-specific PDP work</strong>, not a verdict on your whole business.</p>
+
+                    <p><strong>Practical options:</strong> separate descriptions per market (Shopify Markets or locations), a dedicated AU/NZ <strong>Ingredients:</strong> block in the description, or confirm with your consultant that the product is out of scope for the flagged check.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Does Needs Review mean Aserta thinks we are non-compliant?</summary>
+                <div class="faq-answer">
+                    <p><strong>No.</strong> <strong>Needs Review</strong> means: <em>“We could not confirm this product page meets the checks for this module from the description alone — please have someone look.”</em></p>
+
+                    <p>That is different from a <strong>finding</strong> (for example a <strong>BANNED</strong> or <strong>REGULATED</strong> substance match on AU/NZ Beauty), where Aserta may also inject a safety block on the storefront. INCI quality and SPF presentation checks are <strong>advisory</strong>: they prompt review; they do not rewrite your list or declare you non-compliant.</p>
+
+                    <p>Aserta never sees physical labels, packaging, ARTG certificates, or lab reports — only Shopify HTML. A <strong>Needs Review</strong> status often means <strong>label OK, page lagging</strong> — exactly the catalogue drift problem the app is built to catch.</p>
+
+                    <p style="margin-top: 12px;"><strong>UK Food vs AU/NZ Beauty:</strong> UK Food can apply allergen <strong>bolding</strong> automatically when you use Apply Compliance Updates. AU/NZ Beauty and the SPF Add-on mostly <strong>flag gaps</strong> for your team to fix on the product page — they do not confirm every label is legally perfect or rewrite US-formatted copy into INCI for you.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Will Aserta fix our AU/NZ ingredient lists automatically?</summary>
+                <div class="faq-answer">
+                    <p><strong>Partially.</strong> For <strong>BANNED</strong> or <strong>REGULATED</strong> substance findings, Aserta can inject safety blocks and tags on the storefront — similar to how other modules apply defined warnings.</p>
+                    <p>INCI quality issues (missing <strong>Ingredients:</strong> section, US Active/Inactive format, vague terms) and SPF Add-on checks (missing ARTG reference on the page, and so on) are flagged as <strong>Needs Review</strong>. <strong>Your team</strong> decides how to update the Shopify description. Aserta assists with ongoing monitoring; it does not rewrite formulations or replace your regulatory consultant.</p>
+                </div>
+            </details>
+
+            <p class="faq-section-label">Pricing &amp; account</p>
+
+            <details open>
+                <summary>How much does Aserta cost?</summary>
+                <div class="faq-answer">
+                    <p><strong>UK Food</strong> (available now): <strong>$15.00 per month</strong> or <strong>$159.00 per year</strong>, billed through Shopify. Your first activated module includes a <strong>30-day free trial</strong> — you are not charged until the trial ends. Cancel anytime by uninstalling the app or removing your module in the Aserta dashboard.</p>
+                    <p style="margin-top: 12px;">Additional regulatory modules (US FDA, EU Food, California Prop 65, AU/NZ Beauty) are shown as <strong>Coming soon</strong> in the app. Pricing for those modules will be published when each launches.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Is there a free trial?</summary>
+                <div class="faq-answer">
+                    <p>Yes. Your <strong>first activated module</strong> includes a <strong>30-day free trial</strong>. During the trial, UK Food is fully functional — catalogue scans, allergen bolding, PDF reports, and re-audits on product edits. You will not be charged until the trial period ends. Uninstalling Aserta or removing your module cancels billing automatically.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Will Aserta slow down my storefront or break my theme?</summary>
+                <div class="faq-answer">
+                    <p>Not at all. Aserta operates entirely in the background of your Shopify Admin panel. It updates standard product descriptions and utilises Shopify's native Metafields to store audit data. Because we don't inject heavy JavaScript into your storefront, your site speed and theme design remain 100% unaffected.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Why does a product show "Out of Sync" after I remove it?</summary>
+                <div class="faq-answer">
+                    <p>When you remove a product from Aserta, we clean it by removing all compliance content we added. Shopify notifies us that the product was updated, and since the content no longer matches the last audit, Aserta correctly flags it as needing re-auditing. Once removed from your monitored list, you can safely ignore this status — it will no longer appear in your Aserta dashboard.</p>
+                </div>
+            </details>
+            <details>
+                <summary>What happens if I make a mistake or want to undo an audit?</summary>
+                <div class="faq-answer">
+                    <p>You are always in control. We include a built-in <strong>"Sweep"</strong> feature on your dashboard. Clicking Sweep will neatly undo the Aserta Audit results, removing the automated bolding and clearing the compliance tags, returning your product description to its previous state.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Can I print physical warning labels?</summary>
+                <div class="faq-answer">
+                    <p>Yes. Aserta includes a built-in label generator that creates print-ready compliance labels straight from your audited product data. This feature is provided completely free of charge with your subscription.</p>
+                </div>
+            </details>
+
+            <p class="faq-section-label">Shop in a Day</p>
+            <details>
+                <summary>What is Shop in a Day?</summary>
+                <div class="faq-answer">
+                    <p>A separate Aserta Ltd service: a UK Shopify shop built from a fixed Day 1 checklist. Optional gated niche selection if you do not yet know what to sell. It is not the compliance app. <a href="shop-in-a-day.html">How it works</a> · <a href="request.html">Request the service</a>.</p>
+                </div>
+            </details>
+            <details>
+                <summary>How do I cancel my subscription?</summary>
+                <div class="faq-answer">
+                    <p>Should you wish to, you can cancel at any time directly from your Shopify Admin dashboard under your App Subscriptions settings. Once cancelled, Aserta will cease future renewals immediately.</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div style="font-weight: bold; margin-bottom: 15px;">Aserta</div>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <div style="margin-top: 20px; font-size: 0.875rem; color: #E0EDEE;">
+                <strong>Aserta Ltd</strong>, Eldridge Gardens, Romsey, Hampshire, UK
+            </div>
+        </div>
+    </footer>
+
+    <div class="support-widget-container">
+        <div id="supportBox" class="support-box">
+            <div class="support-header">
+                <h4 style="margin:0">Help & Support</h4>
+                <button style="background:none; border:none; color:white; cursor:pointer; font-size: 1.5rem;" onclick="toggleSupport()">×</button>
+            </div>
+            <div class="support-body">
+                <p style="font-size: 0.9rem; margin-bottom: 15px;">Our team typically responds within 24 hours.</p>
+                <a href="mailto:support@getaserta.com" style="display: inline-block; background-color: var(--success); color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600;">Email Us</a>
+            </div>
+        </div>
+        <button class="support-fab" onclick="toggleSupport()">
+            <svg viewBox="0 0 24 24" width="28" fill="white"><path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z"/></svg>
+        </button>
+    </div>
+
+    <script>
+        function toggleSupport() {
+            const box = document.getElementById('supportBox');
+            box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

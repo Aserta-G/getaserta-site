@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Aserta | Shopify Product Page Compliance Monitoring</title>
+    <meta name="description" content="Why Shopify merchants use Aserta: continuous product description audits, automatic allergen bolding and warning blocks where rules are clear, Needs Review flags where they are not. UK only, other markets coming soon.">
+    <style>
+        :root {
+            --primary: #1F4F82;
+            --primary-hover: #163a61;
+            --text-dark: #111827;
+            --text-light: #6d7175;
+            --bg-brand-light: #E0EDEE;
+            --bg-white: #ffffff;
+            --success: #1F7A4D;
+            --border: #cbd5e1;
+        }
+        
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+        }
+        
+        body { 
+            color: var(--text-dark); 
+            line-height: 1.6; 
+            background-color: var(--bg-white); 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        
+        /* Navbar */
+        nav { 
+            padding: 15px 0; 
+            background-color: var(--bg-white); 
+            border-bottom: 1px solid var(--bg-brand-light); 
+        }
+        
+        .nav-container { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo img { 
+            height: 64px; 
+            width: auto; 
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Main content */
+        main {
+            flex: 1;
+        }
+        
+        /* Typography */
+        h1 { 
+            font-size: 2.75rem; 
+            color: var(--text-dark); 
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        h2 { 
+            font-size: 2rem; 
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-dark);
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        
+        p { 
+            font-size: 1rem; 
+            color: var(--text-light); 
+            margin-bottom: 1.25rem; 
+            line-height: 1.6;
+        }
+
+        /* Sections */
+        section { 
+            padding: 80px 0; 
+        }
+        
+        .bg-brand { 
+            background-color: var(--bg-brand-light); 
+        }
+        
+        /* Cards */
+        .regulatory-card {
+            background: var(--bg-white);
+            padding: 35px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        
+        .regulatory-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        
+        .regulatory-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .did-you-know-item {
+            background: var(--bg-white);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: box-shadow 0.2s;
+        }
+        
+        .did-you-know-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .did-you-know-item strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover { 
+            background-color: var(--primary-hover); 
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 8px 16px;
+            font-size: 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Footer */
+        footer { 
+            background: var(--primary); 
+            color: white; 
+            padding: 50px 0 30px 0;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #E0EDEE;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-section li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section a {
+            color: #E0EDEE;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .footer-divider {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            margin: 30px 0;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            font-size: 12px;
+            color: #b0bec5;
+        }
+        
+        .footer-bottom strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Support Widget */
+        .support-widget-container { 
+            position: fixed; 
+            bottom: 30px; 
+            right: 30px; 
+            z-index: 9999; 
+        }
+        
+        .support-fab { 
+            background-color: var(--primary); 
+            color: white; 
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            box-shadow: 0 4px 12px rgba(31, 79, 130, 0.3); 
+            cursor: pointer; 
+            border: none;
+            transition: transform 0.2s;
+        }
+        
+        .support-fab:hover {
+            transform: scale(1.1);
+        }
+        
+        .support-box { 
+            display: none; 
+            position: absolute; 
+            bottom: 80px; 
+            right: 0; 
+            width: 320px; 
+            background: white; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15); 
+            border: 1px solid var(--border); 
+            overflow: hidden; 
+        }
+        
+        .support-header { 
+            background-color: var(--primary); 
+            color: white; 
+            padding: 15px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        
+        .support-header h4 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .support-header button {
+            background: none; 
+            border: none; 
+            color: white; 
+            cursor: pointer; 
+            font-size: 1.5rem;
+            padding: 0;
+            line-height: 1;
+        }
+        
+        .support-body { 
+            padding: 20px; 
+            text-align: center; 
+        }
+        
+        .support-body p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .btn-support-email { 
+            display: inline-block;
+            background-color: var(--success); 
+            color: white; 
+            text-decoration: none; 
+            padding: 10px 20px; 
+            border-radius: 6px; 
+            width: 100%;
+            box-sizing: border-box;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        
+        .btn-support-email:hover {
+            background-color: #167c56;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { 
+                font-size: 2rem; 
+            }
+            
+            h2 { 
+                font-size: 1.5rem; 
+            }
+            
+            section { 
+                padding: 50px 0; 
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .support-widget-container {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="/assets/asertalogo.png" alt="Aserta">
+            </a>
+            <div class="nav-links">
+                <a href="shop-in-a-day.html">Shop in a Day</a>
+                <a href="why-aserta.html">Why Aserta</a>
+                <a href="https://apps.shopify.com/aserta" class="btn-outline">Install on Shopify</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="bg-brand" style="text-align: center; border-bottom: 1px solid var(--border);">
+            <div class="container" style="max-width: 800px;">
+                <h1>Your labels get reviewed. Your Shopify copy keeps changing.</h1>
+                <p>Most compliance gaps we see are not ignorance — they are <strong>catalogue drift</strong>. A new variant launches, UK copy is pasted into a UK listing, or a bundle SKU never gets a full ingredients block. Aserta re-scans <strong>Shopify product descriptions</strong> when products change — so gaps surface before they spread across your catalogue.</p>
+                <p style="font-size: 0.95rem; margin-bottom: 0;">Automated (Not AI) assistance on Shopify text — not legal advice, not physical label sign-off.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 50px;">Monitor. Apply. Review.</h2>
+
+                <div class="regulatory-card">
+                    <h3>Monitor: Continuous Product Page Checks</h3>
+                    <p>Product pages change. Compliance shouldn't depend on someone remembering to check them.</p>
+                    <p>Whenever a monitored product description is updated in Shopify, Aserta automatically re-runs the compliance modules you've enabled. Every product receives a compliance status stored in Shopify metafields, including <strong>Compliant</strong>, <strong>Needs Review</strong>, or a detailedfindings trail.</p>
+                    <p>Instead of manually revisiting hundreds of product pages after every catalogue update, your team can immediately see which products require attention.</p>
+                
+</div>
+
+                <div class="regulatory-card">
+                    <h3>Apply: Where the rules are clear</h3>
+                    <p> Where regulatory requirements are objective and well defined, Aserta applies consistent formatting automatically.</p>
+                    <p><strong>UK Food (Available Today):</strong> Ingredient lists are scanned for the 14 major allergens and, where appropriate, allergen names are automatically emphasised using FIR-style bold formatting. Every subsequent edit is re-checked to help prevent <strong>compliance drift.</strong></p>
+                    <p> As additional compliance modules become available, Aserta will apply the same rule-based approach wherever regulatory requirements are sufficiently clear and deterministic.</p>
+                </div>
+
+                <div class="regulatory-card">
+                    <h3>Review: Where Professional Judgement Matters</h3>
+                    <p>Some regulatory requirements are objective.</p>
+                    <p>Where the rules are clear, Aserta applies them. Where the information needs interpretation, Aserta flags it for review.
+</p>When Aserta identifies content that cannot be assessed confidently using official regulatory rule sets, it marks the product as <strong>Needs Review</strong> and records its findings for your team.</p>
+                    <p>This helps focus attention where it is genuinely needed, while allowing routine, rule based checks to be handled automatically.</p>
+                    Aserta supports your compliance process. It does not replace regulatory expertise or certify legal compliance.</p>
+                    <p><strong> Built for UK Food today. Expanding to additional compliance modules.</strong></p>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-brand">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 50px;">Modules for the markets you sell into</h2>
+
+                <div class="regulatory-card">
+                    <h3>UK Food &amp; US FDA (Coming soon)</h3>
+                    <p><strong>UK:</strong> FIR-style allergen emphasis in English ingredient lists — applied automatically when you use Apply Compliance Updates. <strong>US:</strong> FDA Big 9 checks; separate <strong>Contains:</strong> lines are supported and bolding is not required. Both modules re-run when product copy changes.</p>
+                </div>
+
+                <div class="regulatory-card">
+                    <h3>AU/NZ Beauty &amp; SPF Add-on (Coming soon)</h3>
+                    <p><strong>Beauty</strong> screens INCI-style composition sections and SUSMP substance keywords on the product page. <strong>SPF Add-on</strong> (+$5/mo, requires Beauty) adds advisory checks on sunscreen-like pages — SPF on the PDP, AUST L / ARTG references, US vs INCI layout. Cross-border merchants often see <strong>Needs Review</strong> when US-formatted copy is reused in AU/NZ — that means fix the <strong>Shopify listing</strong>, not necessarily that the product failed US rules. <a href="faq.html" style="color: var(--primary); font-weight: 600;">See FAQ</a>.</p>
+                </div>
+
+                <div class="regulatory-card">
+                    <h3>California Prop 65 (Coming soon) </h3>
+                    <p>Keyword scan against a maintained Prop 65 rule set, optional Safe Harbor warning blocks on the product page, and <strong>Needs Review</strong> when there is not enough product text to assess. Automatic tags and a metafield trail are added per product — operational guardrails, not a substitute for legal review of your warnings.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 50px;">Why merchants choose continuous monitoring</h2>
+                
+                <div class="did-you-know-item">
+                    <strong>Product pages are not static:</strong> 
+
+New products are launched. Variants are added. Marketing copy changes. Ingredients are updated. Product data is imported.
+
+Every change creates the possibility that your Shopify product pages no longer reflect your previously reviewed information.
+                <strong>Continuous catalogue coverage</strong>
+
+A few best-selling products are easy to review manually. Large catalogues, seasonal ranges, bundles and long tail products are where inconsistencies are more likely to appear.
+
+Aserta continuously monitors your chosen product pages, helping you identify potential compliance issues across your catalogue and not just your best sellers.                
+                </div>
+                
+                <div class="did-you-know-item">
+                    <strong>Works alongside your existing compliance process:</strong>Your regulatory consultant reviews formulations, labels and legal requirements.
+
+Aserta helps monitor your live Shopify product pages between those reviews, providing an additional operational layer rather than replacing professional expertise.
+                </div>
+                
+                <div class="did-you-know-item">
+                    <strong>Built for operational efficiency:</strong> Audit collections in bulk, export PDF audit reports, generate print ready labels from audited product data and when required, you can simply use 'Sweep' to reverse the changes that were applied thus saving time on repetitive catalogue management tasks.
+                </div>
+                
+                <div class="did-you-know-item">
+                    <strong>Clarity about what Aserta checks:</strong> Aserta analyses Shopify product description HTML only. It does not assess physical packaging, laboratory reports or regulatory certificates.
+
+A Needs Review status means a product page deserves attention, not that your product is non-compliant.
+                </div>
+            </div>
+        </section>
+
+        <section style="text-align: center;">
+            <div class="container">
+                <h2>Keep all your Shopify product pages aligned.</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 30px;">30-day free trial · then from <strong>$15/mo</strong> or <strong>$159/yr</strong> for UK Food.</p>
+                <a href="https://apps.shopify.com/aserta" class="btn">Start free trial</a>
+                <p style="margin-top: 20px; font-size: 0.95rem;"><a href="index.html#pricing" style="color: var(--primary); font-weight: 600;">View pricing</a> · <a href="faq.html" style="color: var(--primary); font-weight: 600;">FAQ</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <!-- Product Section -->
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="why-aserta.html">Why Aserta</a></li>
+                        <li><a href="shop-in-a-day.html">Shop in a Day</a></li>
+                        <li><a href="request.html">Request a shop</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Section -->
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://getaserta.com/terms.html" target="_blank">Terms of Service</a></li>
+                        <li><a href="https://getaserta.com/privacy.html" target="_blank">Privacy Policy</a></li>
+                        <li><a href="https://getaserta.com/acceptable-use-policy.html" target="_blank">Acceptable Use Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Compliance Section -->
+                <div class="footer-section">
+                    <h4>Compliance</h4>
+                    <ul>
+                        <li><a href="https://getaserta.com/data-processing-agreement.html" target="_blank">Data Processing Agreement</a></li>
+                        <li><a href="https://getaserta.com/subprocessors.html" target="_blank">Subprocessors List</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support Section -->
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="mailto:support@getaserta.com">support@getaserta.com</a></li>
+                        <li><a href="mailto:dpo@getaserta.com">DPO (dpo@getaserta.com)</a></li>
+                        <li><a href="https://getaserta.com" target="_blank">Website</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="footer-bottom">
+                <strong>Aserta Ltd</strong>
+                <p>Eldridge Gardens, Romsey, Hampshire, United Kingdom</p>
+                <p>&copy; 2026 Aserta Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="support-widget-container">
+        <div id="supportBox" class="support-box">
+            <div class="support-header">
+                <h4>Help & Support</h4>
+                <button onclick="toggleSupport()">×</button>
+            </div>
+            <div class="support-body">
+                <p>Message our team and a real person with expert knowledge will respond within 24 hours.</p>
+                <a href="mailto:support@getaserta.com" class="btn-support-email">Email Us</a>
+            </div> 
+        </div>
+        <button class="support-fab" onclick="toggleSupport()">
+            <svg viewBox="0 0 24 24" width="28" fill="white"><path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z"/></svg>
+        </button>
+    </div>
+
+    <script>
+        function toggleSupport() {
+            const box = document.getElementById('supportBox');
+            box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Shop in a Day | Aserta Ltd</title>
+    <meta name="description" content="Request a Shop in a Day Shopify build from Aserta Ltd. Starter, Standard (with niche selection), or Advanced.">
+    <link rel="icon" type="image/jpeg" href="/favicon.ico">
+    <style>
+        :root {
+            --primary: #1F4F82;
+            --primary-hover: #163a61;
+            --text-dark: #111827;
+            --text-light: #6d7175;
+            --bg-brand-light: #E0EDEE;
+            --border: #cbd5e1;
+            --success: #1F7A4D;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { color: var(--text-dark); line-height: 1.6; background: #fff; }
+        h1 { font-size: 2.4rem; margin-bottom: 0.75rem; }
+        p { color: var(--text-light); margin-bottom: 1rem; font-size: 1.1rem; }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+        nav { padding: 15px 0; border-bottom: 1px solid var(--bg-brand-light); }
+        .nav-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .nav-links { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+        .nav-links a { color: var(--text-dark); text-decoration: none; font-weight: 600; }
+        .logo img { height: 64px; }
+        .btn-outline { color: var(--primary); border: 2px solid var(--primary); padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+        main { padding: 56px 0 80px; }
+        label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.95rem; }
+        input, select, textarea {
+            width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 6px;
+            font-size: 1rem; margin-bottom: 18px; font-family: inherit;
+        }
+        textarea { min-height: 120px; resize: vertical; }
+        .btn {
+            display: inline-block; background: var(--primary); color: #fff; border: none;
+            padding: 14px 28px; border-radius: 6px; font-size: 1.1rem; font-weight: 600; cursor: pointer;
+        }
+        .btn:hover { background: var(--primary-hover); }
+        .hint { font-size: 0.85rem; color: var(--text-light); font-weight: 400; display: block; margin-top: -12px; margin-bottom: 16px; }
+        .hidden { position: absolute; left: -9999px; }
+        footer { text-align: center; padding: 32px 20px; font-size: 0.85rem; color: var(--text-light); border-top: 1px solid var(--bg-brand-light); }
+        footer a { color: var(--primary); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="/assets/asertalogo.png" alt="Aserta"></a>
+            <div class="nav-links">
+                <a href="shop-in-a-day.html">Shop in a Day</a>
+                <a href="why-aserta.html">Why Aserta</a>
+                <a href="https://apps.shopify.com/aserta" class="btn-outline">Install on Shopify</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <h1>Request Shop in a Day</h1>
+            <p>Tell us which package you want. A human at Aserta Ltd will reply, typically within one working day. This is not an instant checkout — we confirm scope before work starts.</p>
+            <p style="font-size: 0.95rem;">Read <a href="shop-in-a-day.html">how Day 1, Day 2, and niche selection split</a> first. Privacy: <a href="privacy.html">privacy policy</a>.</p>
+
+            <form id="form" name="siad-request" method="POST" action="/request-thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="siad-request">
+                <p class="hidden">
+                    <label>Leave blank <input name="bot-field"></label>
+                </p>
+
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required autocomplete="name">
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required autocomplete="email">
+
+                <label for="company">Company <span style="font-weight:400;color:var(--text-light)">(optional)</span></label>
+                <input id="company" name="company" type="text" autocomplete="organization">
+
+                <label for="package">Package</label>
+                <select id="package" name="package" required>
+                    <option value="">Please choose</option>
+                    <option value="starter">Starter — shop only · $999 · 2 days</option>
+                    <option value="standard">Standard — shop + niche selection · $1,399 · 14 days</option>
+                    <option value="advanced">Advanced — shop + niche + Day 2 sitting · $1,899 · 21 days</option>
+                    <option value="not-sure">Not sure yet — please advise</option>
+                </select>
+
+                <label for="shopify">Existing Shopify store URL <span style="font-weight:400;color:var(--text-light)">(optional)</span></label>
+                <input id="shopify" name="shopify_url" type="url" placeholder="https://">
+                <span class="hint">Leave blank if you need a new client-transfer store.</span>
+
+                <label for="message">What you want to sell, or your 10 seed niches</label>
+                <textarea id="message" name="message" required placeholder="Niche ideas, or confirm you already know the range."></textarea>
+
+                <button class="btn" type="submit">Send request</button>
+            </form>
+            <p style="margin-top: 1.5rem; font-size: 0.95rem;">If the form fails, email <a href="mailto:support@getaserta.com?subject=Shop%20in%20a%20Day%20request">support@getaserta.com</a> with the same details.</p>
+        </div>
+    </main>
+    <footer>
+        Aserta Ltd · Eldridge Gardens, Romsey, Hampshire · <a href="index.html">getaserta.com</a>
+    </footer>
+    <script>
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var pkg = params.get('package');
+            if (pkg) {
+                var sel = document.getElementById('package');
+                if (sel && sel.querySelector('option[value="' + pkg + '"]')) sel.value = pkg;
+            }
+        })();
+    </script>
+</body>
+</html>
