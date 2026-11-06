@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aserta | UK Food Allergen Compliance for Shopify</title>
-    <meta name="description" content="Shopify app for UK food allergen compliance: Natasha's Law scanning, automatic FIR-style allergen bolding, PDF audit reports, and re-check on every product edit. 14-day free trial · from $15/mo or $159/yr. Automated assistance — not legal advice, nor AI.">
-    
+    <title>Aserta Ltd | Shopify shops, Shopify help, UK food compliance</title>
+    <meta name="description" content="Aserta Ltd: a UK Shopify shop built in a day, help for an existing Shopify store, and a UK food allergen compliance app. Choose the service you need.">
     <link rel="icon" type="image/jpeg" href="/favicon.ico">
     <style>
         :root {
@@ -18,398 +17,131 @@
             --success: #1F7A4D;
             --border: #cbd5e1;
         }
-        
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-        body { color: var(--text-dark); line-height: 1.6; background-color: var(--bg-white); }
-        h1, h2, h3 { font-weight: 700; line-height: 1.2; color: var(--text-dark); }
-        h1 { font-size: 3rem; margin-bottom: 1rem; }
-        h2 { font-size: 2.25rem; margin-bottom: 1.5rem; }
-        p { font-size: 1.125rem; color: var(--text-light); margin-bottom: 1.5rem; }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        section { padding: 80px 0; }
-        .bg-brand { background-color: var(--bg-brand-light); }
-
+        body { color: var(--text-dark); line-height: 1.6; background: var(--bg-white); }
+        h1, h2, h3 { font-weight: 700; line-height: 1.2; }
+        h1 { font-size: 2.6rem; margin-bottom: 1rem; }
+        h2 { font-size: 1.75rem; margin-bottom: 1rem; }
+        h3 { font-size: 1.25rem; margin-bottom: 0.6rem; }
+        p { font-size: 1.125rem; color: var(--text-light); margin-bottom: 1.25rem; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        nav { padding: 15px 0; border-bottom: 1px solid var(--bg-brand-light); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .nav-links { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+        .nav-links a { color: var(--text-dark); text-decoration: none; font-weight: 600; }
+        .logo img { height: 72px; }
+        .hero { text-align: center; padding: 88px 0 48px; background: var(--bg-brand-light); }
+        .hero p { max-width: 720px; margin: 0 auto; color: var(--text-dark); font-size: 1.2rem; }
+        .offers { padding: 48px 0 72px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+        .card {
+            background: white; border: 1px solid var(--bg-brand-light); border-radius: 8px;
+            padding: 28px 24px 24px; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .card p { flex-grow: 1; font-size: 1rem; }
         .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            padding: 14px 28px;
-            border-radius: 6px;
-            font-size: 1.125rem;
-            font-weight: 600;
-            text-decoration: none;
-            text-align: center;
-            transition: background 0.2s;
-            border: none;
-            cursor: pointer;
+            display: inline-block; background: var(--primary); color: #fff; text-decoration: none;
+            padding: 12px 20px; border-radius: 6px; font-weight: 600; text-align: center;
         }
-        .btn:hover { background-color: var(--primary-hover); }
+        .btn:hover { background: var(--primary-hover); }
         .btn-outline {
-            background-color: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            padding: 8px 16px; 
-            font-size: 1rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
+            display: inline-block; color: var(--primary); border: 2px solid var(--primary);
+            padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600;
         }
-
-        nav { padding: 15px 0; background-color: var(--bg-white); border-bottom: 1px solid var(--bg-brand-light); }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .logo img { height: 72px; width: auto; }
-
-        .hero { text-align: center; padding: 100px 0; border-bottom: 1px solid var(--border); }
-        .hero p { max-width: 800px; margin: 0 auto 2rem auto; font-size: 1.25rem; color: var(--text-dark); }
-
-        /* UPDATED GRID FOR SIDE-BY-SIDE LAYOUT */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Forces two equal columns */
-            gap: 30px;
-            margin-top: 40px;
-            align-items: stretch;
-        }
-
-        /* Responsive adjustment: Stack on mobile */
-        @media (max-width: 768px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-            h1 { font-size: 2.25rem; }
-        }
-
-        .feature-card {
-            background: var(--bg-white);
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid var(--bg-brand-light);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        
-        .pricing-card {
-            background: var(--bg-white);
-            padding: 40px;
-            border-radius: 8px;
-            border: 2px solid var(--primary);
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(31, 79, 130, 0.15);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--success);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-        .price { font-size: 3.5rem; font-weight: 800; color: var(--text-dark); margin: 20px 0; line-height: 1; }
-        .price span { font-size: 1rem; font-weight: 400; color: var(--text-light); }
-        
-        .pricing-features { list-style: none; margin: 20px 0 30px 0; text-align: left; flex-grow: 1; }
-        .pricing-features li { padding: 10px 0; border-bottom: 1px solid var(--bg-brand-light); color: var(--text-dark); font-size: 1rem; }
-        .pricing-features li::before { content: "✓ "; color: var(--success); font-weight: bold; margin-right: 8px; }
-
-        /* Footer Styles */
-        footer { 
-            background: var(--primary); 
-            color: white; 
-            padding: 50px 0 30px 0;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-section h4 {
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #E0EDEE;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-section li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-section a {
-            color: #E0EDEE;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-        
-        .footer-section a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-        
-        .footer-divider {
-            border: none;
-            border-top: 1px solid rgba(255,255,255,0.2);
-            margin: 30px 0;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            font-size: 12px;
-            color: #b0bec5;
-        }
-
-        .honesty-strip {
-            text-align: center;
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 24px 20px;
-            font-size: 0.95rem;
-            color: var(--text-light);
-            border-top: 1px solid var(--border);
-        }
-        .honesty-strip a { color: var(--primary); font-weight: 600; }
-        .support-fab { background-color: #1F4F82; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; }
-        .support-box { display: none; position: absolute; bottom: 80px; right: 0; width: 320px; background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); border: 1px solid #E0EDEE; overflow: hidden; }
-
-        @media (max-width: 768px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
+        .chooser { background: var(--bg-brand-light); padding: 56px 0; }
+        .chooser ul { max-width: 720px; margin: 0 auto; list-style: none; }
+        .chooser li { background: white; padding: 16px 18px; margin-bottom: 10px; border-radius: 6px; color: var(--text-dark); }
+        footer { background: var(--primary); color: #E0EDEE; padding: 48px 0 28px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 28px; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .footer-grid h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        .footer-grid ul { list-style: none; }
+        .footer-grid a { color: #E0EDEE; text-decoration: none; font-size: 14px; }
+        .footer-bottom { text-align: center; font-size: 12px; color: #b0bec5; margin-top: 32px; }
+        @media (max-width: 800px) {
+            .grid-3 { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
     <nav>
         <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <img src="/assets/asertalogo.png" alt="Aserta">
-            </a>
-            <div style="display: flex; align-items: center; gap: 25px;">
-                <a href="shop-in-a-day.html" style="color: var(--text-dark); text-decoration: none; font-weight: 600;">Shop in a Day</a>
-                <a href="why-aserta.html" style="color: var(--text-dark); text-decoration: none; font-weight: 600;">Why Aserta</a>
-                <a href="https://apps.shopify.com/aserta" class="btn-outline">Install on Shopify</a>
+            <a href="index.html" class="logo"><img src="/assets/asertalogo.png" alt="Aserta"></a>
+            <div class="nav-links">
+                <a href="app.html">App</a>
+                <a href="shop-in-a-day.html">Shop in a Day</a>
+                <a href="shopify-help.html">Shopify help</a>
+                <a href="why-aserta.html">Why Aserta</a>
             </div>
         </div>
     </nav>
 
-    <section class="hero bg-brand">
+    <section class="hero">
         <div class="container">
-            <h1>Continuous compliance monitoring, keeps UK food product pages compliant both automatically and continuously.</h1>
-            <p>Aserta scans your <strong>Shopify product descriptions</strong> for all the 14 UK food allergens and variants applies <strong>FIR-style bolding</strong> where rules are clear, and re-checks whenever a product is edited — so catalogue drift does not hide in long-tail SKUs. Where judgment is needed, we flag <strong>Needs Review</strong> instead of guessing.</p>
-            <a href="https://apps.shopify.com/aserta" class="btn">Start 14-day free trial</a>
-            <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 1.25rem; margin-bottom: 0;">Then from <strong>$15/mo</strong> or <strong>$159/yr</strong> · Automated assistance on Shopify text only — not legal advice, not physical label sign-off.</p>
+            <h1>Shopify shops. Shopify help. UK food page compliance.</h1>
+            <p>Aserta Ltd does three jobs on Shopify. Pick the one you need — they are separate services, not a bundle.</p>
         </div>
     </section>
 
-    <!-- Core Features Grid -->
-    <section class="bg-brand">
+    <section class="offers">
         <div class="container">
-            <h2 style="text-align: center;">What Aserta does in Shopify</h2>
-            <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-                <div class="feature-card">
-                    <h3>Continuous product page monitoring</h3>
-                    <p>Product pages evolve over time. Every update has the potential to introduce compliance drift. Aserta automatically re-audits monitored product descriptions whenever they're updated in Shopify, helping you identify issues before they spread across your catalogue.
-</p>
-                </div>
-                <div class="feature-card">
-                    <h3>* Automatic Allergen Emphasis</h3>
-                    <p><strong>UK Food:</strong> detects all 14 major allergens and emphasises them in ingredient lists (FIR-style bolding). Supports <strong>Contains:</strong> lines and common ingredient declaration formats.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Per product audit trail</h3>
-                    <p>Every audit records a compliance status in Shopify metafields, allowing your team to see <strong>Compliant</strong>, <strong>Needs Review</strong>, or detailed findings for every monitored product after each audit.
-</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Print ready labels</h3>
-                    <p>Generate print-ready labels directly from audited product data, helping reduce repetitive manual work while keeping your product information consistent. You remain responsible for confirming that printed labels accurately reflect your approved legal copy.</p>
-                </div>
+            <div class="grid-3">
+                <article class="card">
+                    <h3>App</h3>
+                    <p>UK food allergen checks on Shopify product descriptions. FIR-style bolding where the rule is clear. Re-audit when a product is edited. Automated assistance — not legal advice.</p>
+                    <a class="btn" href="app.html">UK Food app · 14-day trial</a>
+                </article>
+                <article class="card">
+                    <h3>Shop in a Day</h3>
+                    <p>A new UK Shopify shop from a fixed Day 1 checklist. Optional gated niche selection if you do not yet know what to sell. You own the shop; payments go live after transfer.</p>
+                    <a class="btn" href="shop-in-a-day.html">New shop</a>
+                </article>
+                <article class="card">
+                    <h3>Shopify help</h3>
+                    <p>You already have a shop that is messy, stuck, or wrong. Tell us what is going on in your own words. A human replies and we agree scope before any work.</p>
+                    <a class="btn" href="shopify-help.html">Help an existing shop</a>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section with Side-by-Side Boxes -->
-    <section id="pricing">
+    <section class="chooser">
         <div class="container">
-            <h2 style="text-align: center;">Simple pricing for UK food compliance.</h2>
-            <p style="text-align: center; margin-bottom: 40px;"><strong>14-day free trial</strong> on your first module. Cancel anytime from Shopify.</p>
-            
-            <div class="grid-2">
-                <!-- Box 1: UK Food -->
-                <div class="pricing-card">
-                    <div class="badge">Available now</div>
-                    <div>
-                        <h3 style="margin-top: 10px; font-size: 1.5rem; color: var(--primary);">UK Food</h3>
-                        <p style="font-size: 0.875rem; color: var(--text-light);">Natasha's Law · 14 allergen detection · FIR-style bolding</p>
-                        <div class="price">$15 <span>/ mo</span></div>
-                        <p style="font-size: 1rem; color: var(--text-light); margin-top: -10px;">or <strong>$159/yr</strong> (save $21)</p>
-                    </div>
-                    
-                    <ul class="pricing-features">
-                        <li><strong>14-day free trial</strong> — no charge until trial ends</li>
-                        <li>Full catalogue scan + automatic re-audit on every edit</li>
-                        <li>PDF audit reports + print-ready labels included</li>
-                        <li>Compliance metafield status on every scanned product</li>
-                        <li><strong>Sweep</strong> to undo applied changes when you need a rollback</li>
-                    </ul>
-                    
-                    <a href="https://apps.shopify.com/aserta" class="btn">Start free trial</a>
-                </div>
-
-                <!-- Box 2: More modules -->
-                <div class="pricing-card" style="border-color: var(--text-dark); background: #f8fafc;">
-                    <div class="badge" style="background: var(--text-dark);">Coming soon</div>
-                    <div>
-                        <h3 style="margin-top: 10px; font-size: 1.5rem; color: var(--text-dark);">More modules</h3>
-                        <p style="font-size: 0.875rem; color: var(--text-light);">US FDA · EU Food · California Prop 65 · AU/NZ Beauty</p>
-                        <div class="price" style="font-size: 2rem;">Modular</div>
-                        <p style="font-size: 0.875rem; color: var(--text-light); margin-top: -5px;">Pay only for the markets you sell into</p>
-                    </div>
-                    
-                    <ul class="pricing-features">
-                        <li>Additional regulatory modules launching in phases</li>
-                        <li>Same audit dashboard, PDF reports, and re-audit workflow</li>
-                        <li>Shown as <strong>Coming soon</strong> in the app until each module is live</li>
-                        <li>Install UK Food now — add other markets when they launch</li>
-                    </ul>
-                    
-                    <a href="https://apps.shopify.com/aserta" class="btn" style="background: var(--text-dark);">Install on Shopify</a>
-                </div>
-            </div>
-
-            <div class="honesty-strip">
-                <p style="margin-bottom: 0.75rem;">Aserta is <strong>automated assistance</strong> for Shopify product text — not a law firm, not a replacement for label review by your regulatory consultant, and not a guarantee of market compliance.</p>
-                <a href="faq.html">Read the FAQ</a>
-            </div>
+            <h2 style="text-align:center;">Which one?</h2>
+            <ul>
+                <li><strong>Already selling UK food on Shopify</strong> — start with the app.</li>
+                <li><strong>Need a shop from scratch</strong> — Shop in a Day.</li>
+                <li><strong>Shop exists but something is wrong</strong> — Shopify help.</li>
+            </ul>
         </div>
     </section>
 
-    <section class="bg-brand" id="shop-in-a-day">
-        <div class="container">
-            <h2 style="text-align: center;">Also from Aserta: Shop in a Day</h2>
-            <p style="text-align: center; max-width: 720px; margin: 0 auto 2rem;">A UK Shopify shop built in one day from a fixed checklist — with optional gated niche selection if you do not yet know what to sell. Compliance app and shop build are separate services.</p>
-            <div class="grid-2">
-                <div class="feature-card">
-                    <h3>Day 1 shop</h3>
-                    <p>Theme, collections, pages, and up to 20 products (or empty collections if you will add stock later). Password on. Payments stay off until you own the shop so a client-transfer stays clean.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Optional niche selection</h3>
-                    <p>From your 10+ ideas we run UK price, supplier, and online-model gates. You expand the list, run Keyword Planner, and choose. We do not invent search volumes or wholesale prices.</p>
-                </div>
-            </div>
-            <p style="text-align: center; margin-top: 2rem; margin-bottom: 0;">
-                <a href="shop-in-a-day.html" class="btn">How Shop in a Day works</a>
-                <a href="request.html" class="btn-outline" style="margin-left: 12px; padding: 12px 24px;">Request the service</a>
-            </p>
-        </div>
-    </section>
-
-    <!-- Enhanced Footer with All Legal Documents -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-grid">
-                <!-- Product Section -->
-                <div class="footer-section">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="why-aserta.html">Why Aserta</a></li>
-                        <li><a href="shop-in-a-day.html">Shop in a Day</a></li>
-                        <li><a href="request.html">Request a shop</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="https://apps.shopify.com/aserta">Install App</a></li>
-                    </ul>
-                </div>
-
-                <!-- Legal Section -->
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="https://getaserta.com/terms.html" target="_blank">Terms of Service</a></li>
-                        <li><a href="https://getaserta.com/privacy.html" target="_blank">Privacy Policy</a></li>
-                        <li><a href="https://getaserta.com/acceptable-use-policy.html" target="_blank">Acceptable Use Policy</a></li>
-                    </ul>
-                </div>
-
-                <!-- Compliance Section -->
-                <div class="footer-section">
-                    <h4>Compliance</h4>
-                    <ul>
-                        <li><a href="https://getaserta.com/data-processing-agreement.html" target="_blank">Data Processing Agreement</a></li>
-                        <li><a href="https://getaserta.com/subprocessors.html" target="_blank">Subprocessors List</a></li>
-                    </ul>
-                </div>
-
-                <!-- Support Section -->
-                <div class="footer-section">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="mailto:support@getaserta.com">support@getaserta.com</a></li>
-                        <li><a href="mailto:dpo@getaserta.com">DPO (dpo@getaserta.com)</a></li>
-                        <li><a href="https://getaserta.com" target="_blank">Website</a></li>
-                    </ul>
-                </div>
+        <div class="footer-grid">
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="app.html">App</a></li>
+                    <li><a href="shop-in-a-day.html">Shop in a Day</a></li>
+                    <li><a href="shopify-help.html">Shopify help</a></li>
+                    <li><a href="why-aserta.html">Why Aserta</a></li>
+                </ul>
             </div>
-
-            <hr class="footer-divider">
-
-            <div class="footer-bottom">
-                <div style="font-size: 0.95rem; margin-bottom: 10px;">
-                    <strong>Aserta Ltd</strong><br>
-                    Eldridge Gardens, Romsey, Hampshire, United Kingdom
-                </div>
-                <p>&copy; 2026 Aserta Ltd. All rights reserved.</p>
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:support@getaserta.com">support@getaserta.com</a></li>
+                </ul>
             </div>
         </div>
+        <p class="footer-bottom">Aserta Ltd · Eldridge Gardens, Romsey, Hampshire · © 2026</p>
     </footer>
-
-    <div class="support-widget-container">
-        <div id="supportBox" class="support-box">
-            <div style="background:var(--primary); color:white; padding:15px; display:flex; justify-content:space-between;">
-                <h4 style="margin:0">Support</h4>
-                <button onclick="toggleSupport()" style="background:none; border:none; color:white; cursor:pointer;">×</button>
-            </div>
-            <div style="padding:20px; text-align:center;">
-                <p style="font-size:0.9rem; margin-bottom:15px;">Response time is by a human and typically under 24 hours.</p>
-                <a href="mailto:support@getaserta.com" style="background:var(--success); color:white; padding:10px 20px; text-decoration:none; border-radius:6px; display:block;">Email Us</a>
-            </div>
-        </div>
-        <button class="support-fab" onclick="toggleSupport()">
-            <svg viewBox="0 0 24 24" width="28" fill="white"><path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z"/></svg>
-        </button>
-    </div>
-
-    <script>
-        function toggleSupport() {
-            const box = document.getElementById('supportBox');
-            box.style.display = (box.style.display === 'block') ? 'none' : 'block';
-        }
-    </script>
 </body>
 </html>
