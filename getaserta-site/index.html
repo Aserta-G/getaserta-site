@@ -143,5 +143,25 @@
         </div>
         <p class="footer-bottom">Aserta Ltd · Eldridge Gardens, Romsey, Hampshire · © 2026</p>
     </footer>
+
+    <!-- Netlify form detection: static copies so POSTs are registered at build -->
+    <form name="siad-request" method="POST" action="/request-thanks" data-netlify="true" netlify netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="siad-request">
+        <input name="bot-field">
+        <input name="name">
+        <input name="email">
+        <input name="company">
+        <input name="package">
+        <input name="shopify_url">
+        <textarea name="message"></textarea>
+    </form>
+    <form name="shopify-help" method="POST" action="/request-thanks" data-netlify="true" netlify netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="shopify-help">
+        <input name="bot-field">
+        <input name="name">
+        <input name="email">
+        <input name="shop_url">
+        <textarea name="message"></textarea>
+    </form>
 </body>
 </html>
